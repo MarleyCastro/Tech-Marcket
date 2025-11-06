@@ -1,0 +1,77 @@
+<div class="filtro-periodo">
+    <label for="periodo">Período: </label>
+    <select id="periodo">
+        <option value="7">Últimos 7 dias</option>
+        <option value="15">Últimos 15 dias</option>
+        <option value="30" selected>Últimos 30 dias</option>
+        <option value="60">Últimos 60 dias</option>
+        <option value="90">Últimos 90 dias</option>
+    </select>
+</div>
+
+<h3>Saldo: <span id="saldo-valor"></span></h3>
+<ul id="lista-transacoes"></ul>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        const dadosExtratos = {
+            saldo: 4820.90,
+            transacoes: [
+                { tipo: 'venda', descricao: 'Venda - Fone', valor: 249.90, dia: 90 },
+                { tipo: 'venda', descricao: 'Venda - Teclado Mecânico', valor: 399.90, dia: 90 },
+                { tipo: 'compra', descricao: 'Compra - Estoque de Fones', valor: 1500.00, dia: 60 },
+                { tipo: 'serviço', descricao: 'Serviço - Desenvolvimento de Site', valor: 2500.00, dia: 15 },
+                { tipo: 'assinatura', descricao: 'Assinatura - GitHub Pro', valor: 48.00, dia: 30 },
+                { tipo: 'despesa', descricao: 'Despesa - Energia Elétrica', valor: 520.75, dia: 30 },
+                { tipo: 'entrada', descricao: 'Entrada - Investimento de Sócio', valor: 5000.00, dia: 7 },
+            ]
+        };
+
+        const periodoSelect = document.getElementById('periodo');
+        const saldoElemento = document.getElementById('saldo-valor');
+        const listaTransacoes = document.getElementById('lista-transacoes');
+
+        // Mostra saldo formatado
+        saldoElemento.textContent = dadosExtratos.saldo.toLocaleString('pt-BR', {
+            style: 'currency',
+            currency: 'BRL'
+        });
+
+        // Função para renderizar a lista conforme o filtro
+        function renderizarTransacoes(filtroDias) {
+            listaTransacoes.innerHTML = ''; // limpa a lista
+
+            const filtradas = dadosExtratos.transacoes.filter(t => t.dia <= filtroDias);
+
+            filtradas.forEach(transacao => {
+                const li = document.createElement('li');
+                li.classList.add('transacao');
+                if (Math.abs(transacao.valor) >= 5000) li.classList.add('transacao-alta');
+
+                const valorFormatado = transacao.valor.toLocaleString('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL'
+                });
+
+                li.innerHTML = `
+        <div class="transacao-info">
+          <span>${transacao.descricao}</span>
+          <span class="transacao-valor">${valorFormatado}</span>
+        </div>
+      `;
+                listaTransacoes.appendChild(li);
+            });
+        }
+
+        // Atualiza a lista ao mudar o filtro
+        periodoSelect.addEventListener('change', e => {
+            const valor = parseInt(e.target.value);
+            console.log('Filtro alterado para:', valor, 'dias');
+            renderizarTransacoes(valor);
+        });
+
+        // Mostra inicialmente as últimas 30 dias (default)
+        renderizarTransacoes(parseInt(periodoSelect.value));
+    });
+</script>

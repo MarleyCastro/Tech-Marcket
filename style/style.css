@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #5c5c5c 0%, #ffffff 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.formulario-container {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.formulario-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.formulario-header h1 {
+    color: #000000;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.formulario-header p {
+    color: #666;
+    font-size: 14px;
+}
+
+.form-grupo {
+    margin-bottom: 25px;
+}
+
+.form-grupo label {
+    display: block;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.form-grupo input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.form-grupo input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-grupo input.erro {
+    border-color: #dc3545;
+}
+
+.form-grupo input.sucesso {
+    border-color: #28a745;
+}
+
+.mensagem-erro {
+    color: #dc3545;
+    font-size: 13px;
+    margin-top: 5px;
+    display: none;
+}
+
+.mensagem-erro.mostrar {
+    display: block;
+}
+
+.mensagem-sucesso {
+    color: #28a745;
+    font-size: 13px;
+    margin-top: 5px;
+    display: none;
+}
+
+.mensagem-sucesso.mostrar {
+    display: block;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #5c5c5c 0%, #3d3c3c 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(77, 78, 82, 0.918);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}
+
+.alerta-sucesso {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    display: none;
+}
+
+.alerta-sucesso.mostrar {
+    display: block;
+}
+
+

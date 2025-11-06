@@ -1,0 +1,78 @@
+        /* Responsividade para Mobile */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .header {
+                padding: 20px 15px;
+            }
+
+            .header h1 {
+                font-size: 22px;
+            }
+
+            .saldo-valor {
+                font-size: 28px;
+            }
+
+            .filtro-periodo {
+                padding: 15px;
+            }
+
+            .filtro-periodo select {
+                width: 100%;
+                font-size: 14px;
+            }
+
+            .extrato-lista {
+                padding: 10px 15px;
+            }
+
+            .transacao {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px;
+            }
+
+            .transacao-info {
+                margin-bottom: 10px;
+            }
+
+            .transacao-descricao {
+                font-size: 14px;
+            }
+
+            .transacao-data {
+                font-size: 12px;
+            }
+
+            .transacao-valor {
+                font-size: 18px;
+                text-align: left;
+                width: 100%;
+            }
+
+            .transacao-alta .transacao-valor {
+                font-size: 20px;
+            }
+
+            .badge-alto-valor {
+                margin-left: 0;
+                margin-top: 5px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 18px;
+            }
+
+            .saldo-valor {
+                font-size: 24px;
+            }
+
+            .transacao-descricao {
+                font-size: 13px;
+            }
+        }

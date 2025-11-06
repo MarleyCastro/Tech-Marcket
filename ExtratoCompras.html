@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechMarket - Extrato de Compras</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/Market.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <button id="backHome">X</button>
+            <h1 style="padding-top: 30px;">Extrato de Compras</h1>
+            <p>TechMarket - Sua conta digital</p>
+            <div class="saldo-container">
+                <div class="saldo-label">Saldo Disponível</div>
+                <ul class="saldo-valor" id="saldo-valor"></ul>
+            </div>
+        </div>
+
+        <div class="filtro-periodo">
+            <label for="periodo">Período: </label>
+            <select id="periodo">
+                <option value="7">Últimos 7 dias</option>
+                <option value="15">Últimos 15 dias</option>
+                <option value="30" selected>Últimos 30 dias</option>
+                <option value="60">Últimos 60 dias</option>
+                <option value="90">Últimos 90 dias</option>
+            </select>
+        </div>
+
+        <ul id="lista-transacoes"></ul>
+
+
+    <script src="script/MarketExit.js"></script>
+    <script src="script/api.js"></script>
+    <script src="script/function.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.header {
+    background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+    color: rgb(0, 0, 0);
+    padding: 30px;
+    text-align: center;
+}
+
+#backHome {
+    color: aliceblue;
+    background: red;
+    padding: 20px;
+    border-radius: 50px;
+    font-weight: 800;
+    border: none;
+    cursor: pointer;
+}
+
+.header h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.saldo-container {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.saldo-label {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.saldo-valor {
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.filtro-periodo {
+    padding: 20px 30px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.filtro-periodo select {
+    padding: 10px 15px;
+    border: 2px solid #667eea;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: white;
+    cursor: pointer;
+    outline: none;
+}
+
+.extrato-lista {
+    padding: 20px 30px;
+}
+
+.transacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    padding: 30px;
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.3s ease;
+    font-weight: 400;
+    font-size: 2em;
+}
+
+.transacao-valor{
+    font-weight: 800;
+    font-size: 2rem;
+    display: flex;
+    justify-content: left;
+}
+
+.transacao:hover {
+    background-color: #b4b7bb;
+}
+
+.transacao-info {
+    flex: 1;
+    color: #333;
+}
+
+.valor-positivo {
+    color: #28a745;
+}
+
+.valor-negativo {
+    width: 1px;
+    color: #dc3545;
+    text-decoration: #667eea;
+}
+
+/* Destaque para valores altos */
+.transacao-alta {
+    background-color: #fff3cd;
+    border-left: 4px solid #ffc107;
+    font-weight: 800;
+    font-size: 2rem;
+}
+
+.transacao-alta .transacao-valor {
+    font-weight: 800;
+    font-size: 2rem;
+    color: #d39e00;
+}
+
+.badge-alto-valor {
+    font-weight: 800;
+    font-size: 2rem;
+    display: inline-block;
+    background-color: #ffc107;
+    color: #333;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+@media (max-width: 600px) {
+    .formulario-container {
+        padding: 25px;
+    }
+
+    .formulario-header h1 {
+        font-size: 22px;
+    }
+}
